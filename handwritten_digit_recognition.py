@@ -73,12 +73,24 @@ def preprocess_image(image_path):
 # Đường dẫn đến hình ảnh 
 image_paths = [
     
+    'handwriting/img1.jpg',
+    'handwriting/img2.jpg',
+    'handwriting/img3.jpg',
+    'handwriting/img4_3.jpg',
+    'handwriting/img5_2.jpg',
+    'handwriting/img6_2.jpg',
+    'handwriting/img7.jpg',
+    'handwriting/img8.jpg',
+    'handwriting/img9.jpg' ,
+
     'Test_img/img_2.png',
     'Test_img/img2_1.png',
+    
+    'Test_img/img8_4.png',
+    'Test_img/img8_8.png',
 
     'Test_img/img_3.png',
     'Test_img/img3_1.png',
-    'Test_img/img3_2.png',
     
     'Test_img/img_1.png',
     'Test_img/img1_1.png',
@@ -90,17 +102,9 @@ image_paths = [
     'Test_img/img9_2.png',#!
     'Test_img/img9_5.png' ,
 
-    'handwriting/img1.jpg',
-    'handwriting/img2.jpg',
-    'handwriting/img3.jpg',
-    'handwriting/img4_3.jpg',
     'handwriting/img4_5.jpg',
-    'handwriting/img5_2.jpg',
-    'handwriting/img6_2.jpg',
-    'handwriting/img7.jpg',
-    'handwriting/img8.jpg',
-    'handwriting/img9.jpg' 
-    
+    'Test_img/img3_2.png',
+
     'Test_img/img_5.png',
     'Test_img/img5_1.png',#!
     'Test_img/img5_2.png',
@@ -108,8 +112,6 @@ image_paths = [
     'Test_img/img7_1.png',
     'Test_img/img7_2.png',
     
-    'Test_img/img8_4.png',
-    'Test_img/img8_8.png',
 
     'Test_img/img6_4.png',
     'Test_img/img6_5.png',#!
@@ -123,7 +125,7 @@ image_paths = [
 images = [preprocess_image(img_path) for img_path in image_paths]
 images = [img for img in images if img is not None]
 
-
+                
 if len(images) > 0:
     hog_features = compute_hog_features(images)
     hog_features = scaler.transform(hog_features)
